@@ -6,7 +6,6 @@
       {
         "loose": false
       }
-    ],
-    ["@babel/plugin-proposal-private-methods", { "loose": false }]
+    ]
   ]
 }
