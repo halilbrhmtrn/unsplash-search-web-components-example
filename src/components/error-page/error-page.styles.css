@@ -1,0 +1,20 @@
+.error-page {
+    width: 940px;
+height: 62px;
+margin: 0 auto;
+padding-top: 30px;
+background: #FF4A4A;
+opacity: 0.1;
+border-radius: 4px;
+}
+
+.error-page span {
+    font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 19px;
+text-align: left;
+padding-left: 30px;
+color: #FF4A4A;
+}

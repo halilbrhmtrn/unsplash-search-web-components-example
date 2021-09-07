@@ -1,0 +1,83 @@
+  
+
+.masonry-container {
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    font-size: 0;  
+    height: 1076px;
+    width: 940px;
+    margin: 150px auto 112px auto;
+    gap: 20px;
+}
+
+.masonry-col-3 {
+    width: calc(33.33% - 20px);
+    height: 100%;
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+}
+.masonry-elm-396 {
+    height: 396px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    background-size: cover;
+}
+.masonry-elm-320 {
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    background-size: cover;
+}
+.masonry-elm-214 {
+    height: 214px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    background-size: cover;
+}
+.masonry-container img {
+    object-fit: cover;
+    background-size: cover;
+    transition: .8s opacity;
+}
+.masonry-container figure, .masonry-container img {
+   width: 100%;
+   height: 100%;
+}
+.masonry-container img:hover {
+    opacity: .3;
+}
+.masonry-container div:not(:last-child){ 
+    margin-bottom: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+.buttons-container button {
+    padding: 12px 17px;
+    margin: 70px 10px;
+    width: 93px;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(42, 43, 141);
+    border: 1px solid rgb(213, 215, 229);
+    border-radius: 2px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}

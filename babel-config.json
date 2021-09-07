@@ -1,0 +1,12 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    [
+      "@babel/plugin-class-properties",
+      {
+        "loose": false
+      }
+    ],
+    ["@babel/plugin-proposal-private-methods", { "loose": false }]
+  ]
+}

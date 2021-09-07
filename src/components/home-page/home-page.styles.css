@@ -1,0 +1,187 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+  }
+
+.home-page-container {
+  width: 400px;
+  height: 431px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-page-logo-container {
+    width: 213px;
+    height: 128px;
+    margin-bottom: 57px;
+}
+.home-page-form-container {
+  width: 100%;
+}
+.home-page-search-form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-page-search-form input{
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-radius: 4px;
+    width: 100%;
+    max-height: 55px;
+    margin-bottom: 21px;
+    padding: 10px 20px;
+    flex: 1 1 0px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.home-page-search-form option:not(:first-child) {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-black);
+    padding: 10px 20px !important;
+}
+.home-page-search-form .home-page-search-btn {
+    background-color: var(--color-button-bg);
+    width: 246px;
+    border-radius: 25px;
+    height: 50px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--color-white);
+    transform: 300ms all;
+    margin-top: 60px;
+}
+.home-page-search-form .home-page-search-btn:hover {
+    background-color: var(--color-button-bg-hover);
+}
+
+.home-page-dropdown-container {
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+.home-page-dropdown-container.add-after ::after{
+    left: 8px;
+    bottom: -4px;
+    width: calc(100% - 16px);
+    opacity: 0.6;
+    border-radius: 4px;
+    height: 4px;
+    content: "";
+    position: absolute;
+    background-color: var(--color-gray);
+    z-index: -5;
+}
+.home-page-dropdown-container.no-after ::after{content:none;}
+
+.home-page-dropdown-container ul {
+    list-style: none;
+    display: none;
+}
+.home-page-dropdown-container ul li {
+    -webkit-flex: 1;
+    flex: 1;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-bottom: 1px solid var(--color-light-gray);
+    width: 100%;
+    max-height: 55px;
+    padding: 10px 20px;
+    flex: 1;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    }
+.home-page-dropdown-container ul li:hover {
+    background-color: var(--color-light-gray);
+}
+.home-page-dropdown-container label, .home-page-dropdown-container:hover li {
+    flex: 1;
+    -webkit-flex: 1;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-bottom: 1px solid var(--color-light-gray);
+    width: 100%;
+    max-height: 55px;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.home-page-dropdown-container label, .home-page-dropdown-container:hover li:last-child, .home-page-dropdown-container ul li:last-child {
+    border-bottom: none;
+}
+.home-page-dropdown-container label {
+    color: var(--color-light-gray);
+}
+.home-page-dropdown-container .selected {
+    color: var(--color-black);
+}
+
+.home-page-dropdown-container .selected:hover label{
+    color: var(--color-black);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--color-light-gray);
+    opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--color-light-gray);
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--color-light-gray);
+}
+.home-page-arrow {
+    position: absolute;
+    right: 9px;
+    top: 14px;
+    border-radius: 1px;
+}
+
+.spinner img {
+    display: none;
+    position: absolute;
+    left: 42%;
+    top: 43%;
+    -webkit-animation: spin 1.1s infinite linear;
+    animation: spin 1.1s infinite linear;
+    fill-opacity: 1;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

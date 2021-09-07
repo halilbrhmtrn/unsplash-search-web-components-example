@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+/* Setting color variables for further usage */
+:root {
+    --color-black: #050417;
+    --color-button-bg: #2A2B8D;
+    --color-button-bg-hover: #6a6fffd5;
+    --color-white: #FFFFFF;
+    --color-gray: #D5D7E5;
+    --color-light-gray: rgba(213, 215, 229, 0.3);
+}
+
+
+body {    
+    width: 100%;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
