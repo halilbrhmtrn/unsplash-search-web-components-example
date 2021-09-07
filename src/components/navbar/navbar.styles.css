@@ -15,6 +15,7 @@
     width: 70px;
     height: 70px;
     position: relative;
+    margin-right: 60px;
 }
 .navbar-sticky-nav-container .navbar-logo-container img:first-child {
     position: absolute;
