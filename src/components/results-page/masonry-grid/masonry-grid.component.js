@@ -14,6 +14,7 @@ export class MasonryGrid extends HTMLElement {
     this.numberPerPage = 9;
     this.currentPage = 1;
     this.numberOfPages = Math.ceil(this.numberOfPhotos / this.numberPerPage);
+    this.images = [];
 
     initShadowDOM(this, html, css);
   }
@@ -28,7 +29,7 @@ export class MasonryGrid extends HTMLElement {
       const nextButton = this.shadowRoot.querySelector(".next-btn");
       this.updateButtonState(prevButton, nextButton);
       this.render();
-      let images = this.shadowRoot.querySelectorAll("img");
+      
 
       prevButton.addEventListener("click", () => {
         if (this.currentPage > 1) {
@@ -36,7 +37,7 @@ export class MasonryGrid extends HTMLElement {
           this.updateButtonState(prevButton, nextButton);
         }
         this.render();
-        images = this.shadowRoot.querySelectorAll("img");
+        this.images = this.shadowRoot.querySelectorAll("img");
       });
       nextButton.addEventListener("click", () => {
         if (this.currentPage < this.numberOfPages) {
@@ -44,18 +45,9 @@ export class MasonryGrid extends HTMLElement {
           this.updateButtonState(prevButton, nextButton);
         }
         this.render();
-        images = this.shadowRoot.querySelectorAll("img");
+        this.images = this.shadowRoot.querySelectorAll("img");
       });
-      [].forEach.call(images, (element) => {
-        element.addEventListener(
-          "click",
-          (e) => {
-            this.handleClick(element);
-            e.stopPropagation();
-          },
-          true
-        );
-      });
+         
     } catch (error) {
       console.log(error);
       gotoErrorPage(this,error);
@@ -78,6 +70,17 @@ export class MasonryGrid extends HTMLElement {
       const photosHTML = this.paginate(this.currentPage);
       figures.forEach((figure, index) => {
         figure.innerHTML = photosHTML[index];
+      });
+      this.images = this.shadowRoot.querySelectorAll("img");
+      [].forEach.call(this.images, (element) => {
+        element.addEventListener(
+          "click",
+          (e) => {
+            this.handleClick(element);
+            e.stopPropagation();
+          },
+          true
+        );
       });
     } catch (error) {
       console.log(error);

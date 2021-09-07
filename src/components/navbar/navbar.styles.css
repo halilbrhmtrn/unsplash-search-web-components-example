@@ -14,16 +14,17 @@
 .navbar-sticky-nav-container .navbar-logo-container {
     width: 70px;
     height: 70px;
+    position: relative;
 }
 .navbar-sticky-nav-container .navbar-logo-container img:first-child {
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: 49px;
 }
 .navbar-sticky-nav-container .navbar-logo-container img:last-child {
     position: absolute;
-    top: 32px;
-    left: 78px;
+    top: 23px;
+    left: 57px;
 }
   .navbar-search-form {
       width: calc(100% - 50px);
