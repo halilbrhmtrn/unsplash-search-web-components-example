@@ -1,30 +1,25 @@
-import html from './error-page.template.html';
-import css from './error-page.styles.css';
-import { initShadowDOM, initCollectionsIntoDOM, handleCollectionClickWithPrefix } from '../../helpers';
-import { Pages } from '../Pages';
+import html from './error-page.template.html'
+import css from './error-page.styles.css'
+import { initShadowDOM } from '../../helpers'
 
-
-export class ErrorPage extends HTMLElement {
+export default class ErrorPage extends HTMLElement {
     constructor() {
-        super();
-        initShadowDOM(this, html, css);
-        const parent = this.getRootNode().host;
-        this.errorMsg = parent.errorMsg || '';
+        super()
+        initShadowDOM(this, html, css)
+        const parent = this.getRootNode().host
+        this.errorMsg = parent.errorMsg || ''
     }
-    
+
     static get observedAttributes() {
-        return ["errorMsg"];
+        return ['errorMsg']
     }
 
     connectedCallback() {
-        this.shadowRoot.querySelector('.error-page span').textContent = this.errorMsg;
-    }
-
-    disconnectedCallback() {
+        this.shadowRoot.querySelector('.error-page span').textContent =
+            this.errorMsg
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.errorMsg = newValue;
+        this.errorMsg = newValue
     }
-
 }

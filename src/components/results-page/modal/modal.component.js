@@ -1,25 +1,10 @@
-import html from './modal.template.html';
-import css from './modal.styles.css';
-import { initShadowDOM, initCollectionsIntoDOM, handleCollectionClickWithPrefix } from '../../../helpers';
-import { Pages } from '../../Pages';
+import html from './modal.template.html'
+import css from './modal.styles.css'
+import { initShadowDOM } from '../../../helpers'
 
-
-export class Modal extends HTMLElement {
+export default class Modal extends HTMLElement {
     constructor() {
-        super();
-        initShadowDOM(this, html, css);
-        
+        super()
+        initShadowDOM(this, html, css)
     }
-
-    connectedCallback() {
-        
-    }
-
-    disconnectedCallback() {
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-    }
-
-    
 }

@@ -1,32 +1,20 @@
-import html from "./results-page.template.html";
-import css from "./results-page.styles.css";
-import {
-  initShadowDOM,
-  initCollectionsIntoDOM,
-  handleCollectionClickWithPrefix,
-} from "../../helpers";
-import { Pages } from "../Pages";
-import { fetchPhotos } from "../../services/unsplash-search.service";
+import html from './results-page.template.html'
+import css from './results-page.styles.css'
+import { initShadowDOM } from '../../helpers'
+import { fetchPhotos } from '../../services/unsplash-search.service'
 
-export class ResultsPage extends HTMLElement {
-  constructor() {
-    super();
-    initShadowDOM(this, html, css);
-    this.fetchPhotos = fetchPhotos;
-    const parent = this.getRootNode().host;
-  }
-  static get observedAttributes() {
-    return ["photos"];
-  }
+export default class ResultsPage extends HTMLElement {
+    constructor() {
+        super()
+        initShadowDOM(this, html, css)
+        this.fetchPhotos = fetchPhotos
+    }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.photos = JSON.parse(newValue);
-  }
+    static get observedAttributes() {
+        return ['photos']
+    }
 
-  connectedCallback() {
-
-  }
-
-  disconnectedCallback() {}
-
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'photos') this.photos = JSON.parse(newValue)
+    }
 }
